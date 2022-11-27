@@ -1,0 +1,12 @@
+{
+    "require": {
+        "illuminate/view": "4.*",
+        "eftec/bladeone": "^4.7",
+      "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "eftec\\": "vendor/eftec/"
+        }
+    }
+}
