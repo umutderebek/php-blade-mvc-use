@@ -1,6 +1,6 @@
 # php + blade + custom mvc
 
-My name is umut derebek, I m fullstack developer, I'd swtich to .core php cuz some saml project's not working properly on laravel.
+I'd switch to .core php cuz some saml project's not working properly on laravel.
 Maybe later I might be able to add some ORM & SAML technologies for this project
 
 --
