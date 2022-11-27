@@ -6,9 +6,9 @@ class Deneme extends Controller {
 
     public function index()
     {
-        $blade = new BladeOne(); // MODE_DEBUG allows to pinpoint troubles.
+        $blade = new BladeOne();
 
-        echo $blade->run("welcome",array("variable1"=>"value1")); // it calls /views/hello.blade.php
+        echo $blade->run("welcome",array("variable1"=>"value1"));
     }
 
     public function index2()

@@ -1,6 +1,21 @@
-# Windwalker Blade Example
+# php + blade + custom mvc
 
-A really simple working example of standalone blade templating using the [Windwalker Renderer](https://github.com/ventoviro/windwalker-renderer)
+My name is umut derebek, I m fullstack developer, I'd swtich to .core php cuz some saml project's not working properly on laravel.
+Maybe later I might be able to add some ORM & SAML technologies for this project
+
+--
+To do List
+--
+
+1-) Php exceptions & Error handlers<br>
+2-) Folder & file security<br>
+3-) XSS protection vulnerability<br>
+4-) Hash<br>
+5-) Httponly Cookie<br>
+6-) Crf Token<br>
+7-) Sql Injection<br>
+8-) SAML SSO tecnologie
+
 
 ## Install dependencies via Composer
 
@@ -16,39 +31,40 @@ Enter base url for proper URL generation:
 const BASE_URL = 'http://localhost';
 ```
 
-### In helpers.php
-Implement any helper your template might use:
+### In database/db.php
+Manage for your settings.php
 
+
+
+* Create a 'controller' for each page in the `controller/` folder
 ``` php
-function asset($path)
-{
-	return BASE_URL . '/assets'. $path;
+
+use eftec\bladeone\BladeOne;
+
+class Deneme extends Controller {
+
+    public function index()
+    {
+        $blade = new BladeOne(); 
+
+        echo $blade->run("welcome",array("variable1"=>"value1")); 
+    }
+
+    public function index2()
+    {
+        echo "deneme index method 2";
+    }
 }
 ```
 
-## Usage
-* Put your blade files in the `views/` folder.
-``` html
-<h1>Welcome!</h1>
-<p>
-	<a href="{{ url('example') }}">Example</a>
-</p> 
+* After that you can change or create another page's `view/` folder
+```
+example.blade.php
 ```
 
-* Create a 'controller' for each page in the `pages/` folder
-``` php
-class Page
-{
-	function show($renderer)
-	{
-		//Render the views/welcome.blade.php file
-		return $renderer->render('welcome', []);
-	}
-}
+* Some Routes in `index.php` file, dont miss your third options when you doing that post proccess :) 
 ```
+Route::run('/deneme2','deneme@index2');
 
-* Access your pages by controller file name
-```
-http://localhost			=> pages/index.php
-http://localhost/example	=> pages/example.php
+Route::run('/post','deneme@post','post');
 ```
